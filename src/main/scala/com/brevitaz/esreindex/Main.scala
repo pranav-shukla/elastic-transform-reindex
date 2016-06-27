@@ -25,7 +25,7 @@ object Main {
     val srcCluster: String = conf.getString("esreindex.source.cluster")
     val srcUri: String = conf.getString("esreindex.source.uri")
 
-    val srcLatLonTargetLatLon: Option[(String, String, String, Boolean)] = if(conf.getString("esreindex.geopoint.latitudeField")!=null) {
+    val srcLatLonTargetLatLon: Option[(String, String, String, Boolean)] = if(conf.hasPathOrNull("esreindex.geopoint.latitudeField")) {
       Some((conf.getString("esreindex.geopoint.latitudeField"), conf.getString("esreindex.geopoint.longitudeField"), conf.getString("esreindex.geopoint.targetField"), conf.getBoolean("esreindex.geopoint.keepOriginalFields")))
     } else None
 
