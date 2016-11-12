@@ -1,0 +1,142 @@
+{
+  "settings": {
+    "index": {
+      "number_of_replicas": "1",
+      "analysis": {
+        "analyzer": {
+          "paths": {
+            "tokenizer": "path_hierarchy"
+          }
+        },
+        "number_of_shards": "5"
+      }
+    }
+  },
+  "mappings": {
+    "user": {
+      "_ttl": {
+        "enabled": true
+      },
+      "properties": {
+        "eventUnixTimestamp": {
+          "type": "date"
+        },
+        "last_location": {
+          "type": "geo_point"
+        },
+        "last_ip_number": {
+          "type": "ip"
+        },
+        "site": {
+          "type": "string",
+          "fields": {
+            "not_analyzed": {
+              "type": "string",
+              "index": "not_analyzed"
+            }
+          }
+        },
+        "event_id": {
+          "type": "string",
+          "fields": {
+            "not_analyzed": {
+              "type": "string",
+              "index": "not_analyzed"
+            }
+          }
+        },
+
+        "use_id": {
+          "type": "string",
+          "fields": {
+            "not_analyzed": {
+              "type": "string",
+              "index": "not_analyzed"
+            }
+          }
+        },
+        "last_session_id": {
+          "type": "string",
+          "fields": {
+            "not_analyzed": {
+              "type": "string",
+              "index": "not_analyzed"
+            }
+          }
+        },
+        "last_browser": {
+          "type": "string",
+          "fields": {
+            "not_analyzed": {
+              "type": "string",
+              "index": "not_analyzed"
+            }
+          }
+        },
+        "last_platform": {
+          "type": "string",
+          "fields": {
+            "not_analyzed": {
+              "type": "string",
+              "index": "not_analyzed"
+            }
+          }
+        },
+        "last_country_name": {
+          "type": "string",
+          "fields": {
+            "not_analyzed": {
+              "type": "string",
+              "index": "not_analyzed"
+            }
+          }
+        },
+        "last_region_name": {
+          "type": "string",
+          "fields": {
+            "not_analyzed": {
+              "type": "string",
+              "index": "not_analyzed"
+            }
+          }
+        },
+        "last_city": {
+          "type": "string",
+          "fields": {
+            "not_analyzed": {
+              "type": "string",
+              "index": "not_analyzed"
+            }
+          }
+        },
+        "number_of_pages_viewed": {
+          "type": "integer"
+        },
+        "total_number_visits": {
+          "type": "integer"
+        },
+        "total_pages_viewed": {
+          "type": "integer"
+        },
+        "session_referrer": {
+          "type": "string",
+          "fields": {
+            "not_analyzed": {
+              "type": "string",
+              "index": "not_analyzed"
+            }
+          }
+        },
+        "session_referrer_hostname": {
+          "type": "string",
+          "fields": {
+            "not_analyzed": {
+              "type": "string",
+              "index": "not_analyzed"
+            }
+          }
+        }
+      }
+    }
+  }
+}
